@@ -1,0 +1,19 @@
+<div class="content">
+  <div class="header">
+    <div class="inputs">
+      <div class="form-inline md-form form-sm active-pink active-pink-2">
+        <mdb-icon fas icon="search" aria-hidden="true"></mdb-icon>
+        <input class="form-control form-control-sm ml-3 w-75 white-text" type="search" [(ngModel)]="searchText"
+          aria-label="Search" mdbInput (keyup)="update()">
+      </div>
+      <div class="results" *ngIf="!chosen">
+        <div class="list-group" *ngFor="let data of dataset | filter: searchText">
+          <a class="list-group-item waves-ligh" (click)="showSelected(data)">{{data}}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="main">
+    <div class="word">{{word}}</div>
+  </div>
+</div>

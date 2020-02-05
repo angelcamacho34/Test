@@ -1,0 +1,29 @@
+<div class="content">
+  <div class="header">
+    <div class="inputs">
+      <div class="md-form">
+        <input mdbInput type="text" id="row" class="form-control" color="white" [(ngModel)]="row">
+        <label for="row" class="white-text">rows</label>
+      </div>
+
+      <div class="md-form">
+        <input mdbInput type="text" id="col" class="form-control" [(ngModel)]="col">
+        <label for="col" class="white-text">columns</label>
+      </div>
+
+      <button mdbBtn type="button" color="indigo" mdbWavesEffect (click)="updateMat()">Go</button>
+    </div>
+  </div>
+  <div class="main">
+    <div class="table">
+      <table mdbTable striped="true" borderer="true">
+        <tbody>
+          <tr mdbTableCol *ngFor="let r of matrix">
+            <td *ngFor="let c of r">{{c}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</div>
